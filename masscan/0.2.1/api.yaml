@@ -1,5 +1,5 @@
-walkoff_version: 0.2.0
-app_version: 0.2.0
+walkoff_version: 0.2.1
+app_version: 0.2.1
 name: masscan
 description: Mass IP port scanner
 contact_info:

@@ -4,7 +4,7 @@ import json
 from walkoff_app_sdk.app_base import AppBase
 
 class MASSCAN(AppBase):
-    __version__ = "0.2.0"
+    __version__ = "0.2.1"
     app_name = "masscan"  # this needs to match "name" in api.yaml
 
     def __init__(self, redis, logger, console_logger=None):
@@ -20,6 +20,8 @@ class MASSCAN(AppBase):
     def read_masscan_result_file(self, file_path:str):
         text = open(file_path, 'r').read()
         result = {}
+        if len(text) == 0:
+            return result
         json_data = json.loads(text)
         for data in json_data:
             if data['ip'] not in result:
